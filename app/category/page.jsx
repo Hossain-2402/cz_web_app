@@ -1,18 +1,16 @@
+import "./Category.css";
+
 const CategoryScreen = ()=>{
 	return (
-			<div
-				style={{
-					height:"20vh",
-					width:"20vw",
-					margin:"25vh 0 0 50%",
-					transform : 'translate(-50%,0 )',
-					boxShadow : '0 0 10px black',
-					borderRadius : '10px',
-					display : 'flex',
-					justifyContent : 'center',
-					alignItems : 'center',
-				}}
-			 className="CategoryScreen">The Category page </div>
+		<div className="CategoryScreen">
+			<div className="desktop_menu_item_selected_style_for_category_page">
+				<div className="nevigation_btn_background_style_in_category_page bg_white"> </div>
+				<div className="nevigation_btn_background_style_in_category_page bg_white"></div>
+				<div className="nevigation_btn_background_style_in_category_page c"></div>
+				<div className="nevigation_btn_background_style_in_category_page bg_white"></div>
+				<div className="nevigation_btn_background_style_in_category_page bg_white o_s"></div>
+			</div>
+		</div>
 		);
 }
 

@@ -1,19 +1,18 @@
-const AboutUs = ()=>{
+import "./AboutUs.css"
+
+const AboutUsScreen = ()=>{
 	return (
-			<div
-				style={{
-					height:"20vh",
-					width:"20vw",
-					margin:"25vh 0 0 50%",
-					transform : 'translate(-50%,0 )',
-					boxShadow : '0 0 10px black',
-					borderRadius : '10px',
-					display : 'flex',
-					justifyContent : 'center',
-					alignItems : 'center',
-				}}
-			 className="AboutUs">The About us page </div>
+		<div className="AboutUsScreen">
+			<div className="desktop_menu_item_selected_style_for_about_us_page">
+				<div className="nevigation_btn_background_style_in_about_us_page bg_white"> </div>
+				<div className="nevigation_btn_background_style_in_about_us_page bg_white"></div>
+				<div className="nevigation_btn_background_style_in_about_us_page bg_white"></div>
+				<div className="nevigation_btn_background_style_in_about_us_page a_u"></div>
+				<div className="nevigation_btn_background_style_in_about_us_page bg_white o_s"></div>
+			</div>
+
+		</div>
 		);
 }
 
-export default AboutUs;
+export default AboutUsScreen;

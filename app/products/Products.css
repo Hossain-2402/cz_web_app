@@ -3,11 +3,11 @@ body{
 	margin: 0;
 }
 
-.Home{
+.ProductsScreen{
 	margin:25vh 0 0 0;
 }
 
-.desktop_menu_item_selected_style_for_home_page{
+.desktop_menu_item_selected_style_for_books_page{
 	position:fixed;
 	width:70vw;
 	left:50%;
@@ -19,7 +19,7 @@ body{
 	z-index: 99;
 }
 
-.nevigation_btn_background_style_in_home_page{
+.nevigation_btn_background_style_in_books_page{
 	height:2.5vh;
 	flex:1;
 	display: flex;
@@ -38,7 +38,7 @@ body{
 	background: white;
 }
 
-.h{
+.b{
 	background:#E9BD42;
 }
 
@@ -46,26 +46,39 @@ body{
 	flex:1.5;
 }
 
+.box{
+	height:50vh;
+	width:50vw;
+	margin:200vh 0 200vh 0;
+	border-radius: 10px;
+	box-shadow: 0 0 10px black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: verdana;
+	float: left;
+}
+
 @media(max-width:991px){
-	.desktop_menu_item_selected_style_for_home_page{
+	.desktop_menu_item_selected_style_for_books_page{
 		height:0;
 		width:0;
 		font-size: 0;
 	}
-	.nevigation_btn_background_style_in_home_page{
+	.nevigation_btn_background_style_in_books_page{
 		padding:0;
 	}
 }
 
 @media(min-width:1024px){
-	.desktop_menu_item_selected_style_for_home_page{
+	.desktop_menu_item_selected_style_for_books_page{
 		top:12vh;
 	}
 }
 
 
 @media(min-width:1440px){
-	.desktop_menu_item_selected_style_for_home_page{
+	.desktop_menu_item_selected_style_for_books_page{
 		top:12vh;
 	}
 }
