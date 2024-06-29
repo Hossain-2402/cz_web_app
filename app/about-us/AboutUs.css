@@ -9,7 +9,7 @@ body{
 
 .desktop_menu_item_selected_style_for_about_us_page{
 	position:fixed;
-	width:70vw;
+	width:100vw;
 	left:50%;
 	transform: translate(-50%,0);
 	display: flex;
@@ -20,12 +20,11 @@ body{
 }
 
 .nevigation_btn_background_style_in_about_us_page{
-	height:2.5vh;
+	height:3vh;
 	flex:1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin:0 1vw;
 	padding:2vh 2vw;
 	color:black;
 /*	border-radius: 10px;*/
@@ -48,6 +47,9 @@ body{
 
 
 @media(max-width:991px){
+	.AboutUsScreen{
+		margin: 15vh 0 0 0;
+	}
 	.desktop_menu_item_selected_style_for_about_us_page{
 		height:0;
 		width:0;

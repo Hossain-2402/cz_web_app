@@ -9,7 +9,7 @@ body{
 
 .desktop_menu_item_selected_style_for_books_page{
 	position:fixed;
-	width:70vw;
+	width:100vw;
 	left:50%;
 	transform: translate(-50%,0);
 	display: flex;
@@ -20,12 +20,11 @@ body{
 }
 
 .nevigation_btn_background_style_in_books_page{
-	height:2.5vh;
+	height:3vh;
 	flex:1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin:0 1vw;
 	padding:2vh 2vw;
 	color:black;
 /*	border-radius: 10px;*/
@@ -46,20 +45,61 @@ body{
 	flex:1.5;
 }
 
-.box{
-	height:50vh;
-	width:50vw;
-	margin:200vh 0 200vh 0;
+.products_area{
+	height:auto;
+	width:98vw;
+	margin:0 0 0 50%;
+	transform: translate(-50%,0);
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 2.5vh 2vw;
+	perspective: 50em;
+}
+
+.product{
+	height:70vh;
 	border-radius: 10px;
-	box-shadow: 0 0 10px black;
+	overflow: hidden;
+	float:left;
+	cursor: pointer;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	gap:1vh;
+/*	border: 2px solid black;*/
+	padding:2vh 2vw;
+	box-shadow: 0 0 10px black;
+	flex-direction: column;
+}
+
+.image{
+	flex:5;
+	width:100%;
+	background-position: center center;
+	transition: .4s;
+}
+
+.product_name{
+	flex:.2;
+	width:20vw;
+	padding:2vh 0 2vh 0;
 	font-family: verdana;
 	float: left;
+	transition: .4s;
+}
+
+.price{
+	flex:.2;
+	width:20vw;
+	font-family: verdana;
+	float: left;
+	font-size: 25px ;
+	font-weight: 525;
+	transition: .4s;
 }
 
 @media(max-width:991px){
+	.ProductsScreen{
+		margin: 15vh 0 0 0;
+	}
 	.desktop_menu_item_selected_style_for_books_page{
 		height:0;
 		width:0;
@@ -68,7 +108,66 @@ body{
 	.nevigation_btn_background_style_in_books_page{
 		padding:0;
 	}
+
+
+
+	.products_area{
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2.5vh 4vw;
+	}
+	.product{
+		height:30vh;
+		box-shadow: 0 0 5px black;
+	}
+
+	.image{
+		background-position: center center;
+	}
+
+	.product_name{
+		font-size: 12px;
+	}
+
+	.price{
+		font-size: 20px;
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media(min-width:1024px){
 	.desktop_menu_item_selected_style_for_books_page{

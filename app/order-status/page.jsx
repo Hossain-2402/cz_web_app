@@ -10,7 +10,7 @@ const OrderStatusScreen = ()=>{
 				<div className="nevigation_btn_background_style_in_order_status_page bg_white"></div>
 				<div className="nevigation_btn_background_style_in_order_status_page o_s o"></div>
 			</div>
-
+			Order Status
 		</div>
 		);
 }

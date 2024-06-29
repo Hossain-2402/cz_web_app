@@ -10,6 +10,7 @@ const AboutUsScreen = ()=>{
 				<div className="nevigation_btn_background_style_in_about_us_page a_u"></div>
 				<div className="nevigation_btn_background_style_in_about_us_page bg_white o_s"></div>
 			</div>
+			About us
 
 		</div>
 		);
