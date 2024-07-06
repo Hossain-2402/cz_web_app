@@ -4,9 +4,16 @@ import "./Products.css";
 import {useState,useEffect} from "react";
 import db from "./firebase_in_products";
 import firebase from "firebase/compat/app";
+import Link from "next/link";
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement, reset } from '../store/reducer.js';
+
 
 
 const ProductsScreen = ()=>{
+
+  const count = useSelector((state) => state.value);
+  const dispatch = useDispatch();
 
 
   const [products,setProducts] = useState([{
@@ -23,10 +30,12 @@ const ProductsScreen = ()=>{
         timestamp : firebase.firestore.FieldValue.serverTimestamp()}]);
 
   useEffect(()=>{
-    db.collection('products').orderBy("timestamp","desc").onSnapshot(snapshot=>{
+  	db.collection('products').orderBy("timestamp","desc").onSnapshot(snapshot=>{
       setProducts(snapshot.docs.map(doc => doc.data()));
     });
   },[]);
+
+  const showDetailArea = (item)=>{};
 
 	return (
 		<div className="ProductsScreen">
@@ -41,7 +50,7 @@ const ProductsScreen = ()=>{
 			<div className="products_area">
 				{products.map((item,index) =>{
 		            return (
-			            <div key={index} className="product" onClick={()=>{showDetailArea(item)}}>
+			            <Link href={`/products/${item.productId}`} key={index} className="product" onClick={()=>{showDetailArea(item)}}>
 							{/*
 								<div class="mouse m1"></div>
 								<div class="mouse m2"></div>
@@ -55,9 +64,9 @@ const ProductsScreen = ()=>{
 							*/}
 
 							<div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat',backgroundSize : '85%'}}  className="image"></div>
-							<div className="product_name">{item.product_name}</div>
+							<div className="product_name">{item.product_name} </div>
 							<div className="price">৳ {item.product_price}</div>
-			            </div>);
+			            </Link>);
 	          })}
 			</div>
 

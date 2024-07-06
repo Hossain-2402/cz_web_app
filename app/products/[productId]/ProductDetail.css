@@ -1,0 +1,238 @@
+body{
+	padding:0;
+	margin: 0;
+}
+
+.ProductDetailScreen{
+	margin:25vh 0 0 0;
+}
+
+.desktop_menu_item_selected_style_for_books_page_in_detail_area{
+/*	background: red;*/
+	position:fixed;
+	width:100vw;
+	left:50%;
+	transform: translate(-50%,0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: white;
+	z-index: 101;
+}
+
+.nevigation_btn_background_style_in_books_page_in_detail_area{
+	height:3vh;
+	flex:1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding:2vh 2vw;
+	color:black;
+/*	border-radius: 10px;*/
+	text-decoration: none;
+	font-weight: 550;
+	transition: .2s;	
+}
+
+.bg_white_in_detail_area{
+	background: white;
+}
+
+.b_in_detail_area{
+	background:#E9BD42;
+}
+
+.o_s_in_detail_area{
+	flex:1.5;
+}
+
+.path_to_current_page_area{
+	padding:2vh 2vw;
+}
+
+.nevigation_redirect_btn{
+	text-decoration: none;
+	color:#E9BD42;
+}
+
+.product_detail_area{
+	height:75vh;
+	width:95%;
+	margin-top:5vh;
+	margin-left:50%;
+	transform: translate(-50%,0);
+	display: flex;
+	gap:1vw;
+}
+
+.product_detail_image_area{
+	height:100%;
+	flex: 1;
+	display: flex;
+	gap:1vw;
+}
+
+.supporting_images_area{
+	height:80%;
+	flex:1;
+	display: flex;
+	flex-direction: column;
+	gap:1vh;
+}
+
+.supporting_image{
+	flex:1;
+	width:100%;
+	cursor: pointer;
+}
+
+.detail_leading_image{
+	height:95%;
+	flex:6;
+	background-size: 75%;
+}
+
+.product_detail_info_area{
+	height:100%;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap:1vh;
+}
+
+.detail_product_name{
+	flex: 2;
+	font-family: verdana;
+	font-size: 30px;
+	width:100%;
+}
+
+
+.detail_category_name{
+	flex: 1;
+	font-family: verdana;
+	width:100%;
+/*	color:#E9BD42;*/
+	cursor: pointer;
+}
+
+.detail_product_description{
+	flex: 10;
+	padding:2vh 0;
+	font-family: verdana;
+	width:100%;
+}
+.detail_price{
+	flex: 1;
+	font-weight: 900;
+	font-size: 30px;
+	width:100%;
+}
+
+
+
+@media(max-width:991px){
+	.ProductDetailScreen{
+		margin: 12vh 0 0 0;
+	}
+	.desktop_menu_item_selected_style_for_books_page_in_detail_area{
+		height:0;
+		width:0;
+		font-size: 0;
+	}
+	.nevigation_btn_background_style_in_books_page_in_detail_area{
+		padding:0;
+	}
+
+	.nevigation_redirect_btn{
+		font-size: 15px;
+	}
+
+	.product_detail_area{
+		height:120vh;
+		margin-top:0;
+		flex-direction: column;
+		gap:1vh;
+	}
+
+	.product_detail_image_area{
+		flex:2;
+		flex-direction: column-reverse;
+	}
+
+	.supporting_images_area{
+		flex:1;
+		flex-direction: row;
+	}
+
+	.supporting_image{
+		background-size: cover;
+	}
+
+	.detail_leading_image{
+		background-size: 100%;
+	}
+
+	.detail_product_name{
+		font-weight: 600;
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(min-width:1024px){
+	.desktop_menu_item_selected_style_for_books_page_in_detail_area{
+		top:12vh;
+	}
+}
+
+
+@media(min-width:1440px){
+	.desktop_menu_item_selected_style_for_books_page_in_detail_area{
+		top:12vh;
+	}
+}
+/*E9BD42*/

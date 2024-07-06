@@ -4,9 +4,15 @@ import "./Home.css";
 import { useEffect,useState } from "react";
 import db from "./firebase";
 import firebase from "firebase/compat/app";
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement, reset } from './store/reducer.js';
 
 
 const Home = ()=>{
+
+
+  const count = useSelector((state) => state.value);
+  const dispatch = useDispatch();
 
   const [products,setProducts] = useState([{
         product_name : "Product Name",
@@ -52,8 +58,32 @@ const Home = ()=>{
       <div className="products_area">
         <h2 className="products_text">Products</h2>
       </div>
+
+
+      <h1>Home: {count}</h1>
+      <button onClick={() => dispatch(increment())}>Increment</button>
+      <button onClick={() => dispatch(decrement())}>Decrement</button>
+      <button onClick={() => dispatch(reset())}>Reset</button>
+
     </div>
     );
 }
 
 export default Home;
+
+
+
+/*
+
+
+app
+ --store 
+    --store.js
+products
+ --p.js
+
+
+tell me a way i can import store.js file in p.js in next js 
+
+
+*/
