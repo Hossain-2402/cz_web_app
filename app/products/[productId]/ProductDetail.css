@@ -132,6 +132,20 @@ body{
 
 
 @media(max-width:991px){
+
+	::-webkit-scrollbar{
+	  width:.7em;
+	}
+
+	::-webkit-scrollbar-track{
+	  background:rgba(0,0,0,.01);
+	  border-radius: 10px;
+	}
+	::-webkit-scrollbar-thumb{
+	  background:black;
+	  border-radius: 10px;
+	}
+
 	.ProductDetailScreen{
 		margin: 12vh 0 0 0;
 	}
@@ -175,6 +189,12 @@ body{
 
 	.detail_product_name{
 		font-weight: 600;
+	}
+
+	.detail_product_description{
+		height:auto;
+/*		overflow-x: wrap ;*/
+		overflow-y: scroll ;
 	}
 
 

@@ -49,7 +49,7 @@ export default function RootLayout({
 
         <div className="user_input_area">
 
-          <Link href="/" className="logo">LOGO</Link>
+          <Link href="/" as="/" className="logo">LOGO</Link>
 
           <div className="search_bar_area">
             <input type="text" placeholder="Enter the name of the book" className="search_bar"/>

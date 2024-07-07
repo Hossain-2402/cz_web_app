@@ -6,13 +6,14 @@ import db from "./firebase_in_products";
 import firebase from "firebase/compat/app";
 import Link from "next/link";
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, reset } from '../store/reducer.js';
+import { increment, decrement, reset, addToCartFunction } from '../store/reducer.js';
 
 
 
 const ProductsScreen = ()=>{
 
-  const count = useSelector((state) => state.value);
+  const cartLength = useSelector((state) => state.cartLength);
+  const cart = useSelector((state)=> state.cart);
   const dispatch = useDispatch();
 
 
@@ -35,7 +36,6 @@ const ProductsScreen = ()=>{
     });
   },[]);
 
-  const showDetailArea = (item)=>{};
 
 	return (
 		<div className="ProductsScreen">
@@ -50,7 +50,19 @@ const ProductsScreen = ()=>{
 			<div className="products_area">
 				{products.map((item,index) =>{
 		            return (
-			            <Link href={`/products/${item.productId}`} key={index} className="product" onClick={()=>{showDetailArea(item)}}>
+			            <Link href={`/products/${item.productId}`} key={index} className="product" 
+				            onClick={() =>{
+				            	let isAdded = false;
+				            	for(let i=0;i<cart.length;i++){
+				            		if(cart[i].productId === item.productId){
+				            			isAdded = true;
+				            		}
+				            	}
+				            	if(!isAdded){	
+					            	dispatch(addToCartFunction(item));
+					            	dispatch(increment());
+				            	}
+			            }}>
 							{/*
 								<div class="mouse m1"></div>
 								<div class="mouse m2"></div>
