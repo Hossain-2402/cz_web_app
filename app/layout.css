@@ -89,7 +89,7 @@ body{
 	background:grey;
 }
 
-.register_btn{
+.cart_btn{
 	height:2em;
 	width:2em;
 	flex:1;
@@ -154,6 +154,7 @@ body{
 	margin:0;
 	padding:0;
 }
+
 
 @media(max-width:991px){
 
@@ -245,9 +246,18 @@ body{
 		align-items: center;
 		border-radius: 10px;
 		font-size: 10px;
-		background:black;
-		color:white;
+		background:#E9BD42;
+		color:black;
+		font-weight: 800;
 		text-decoration: none;
+	}
+
+	.h_home{
+		font-size: 22px;
+	}
+
+	.c_b{
+		font-size: 20px;
 	}
 
 }

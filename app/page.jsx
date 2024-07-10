@@ -30,7 +30,6 @@ const Home = ()=>{
   useEffect(()=>{
     db.collection('products').orderBy("timestamp","desc").onSnapshot(snapshot=>{
       setProducts(snapshot.docs.map(doc => doc.data()));
-      console.log(snapshot.docs.map(doc => doc.id));
     });
   },[]);
 

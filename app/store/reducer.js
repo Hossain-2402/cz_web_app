@@ -1,6 +1,6 @@
 const initialState = {
   cartLength: 0,
-  cart : []
+  cart : [],
 };
 
 const INCREMENT = 'INCREMENT';

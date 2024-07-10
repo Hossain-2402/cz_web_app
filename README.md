@@ -50,4 +50,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 #	(folder) : A folder that is NOT A ROUTE . it gathers components of same category .
 #	@Card : It is a component that can be called in any route using the { import "@Card" } location line added on top . 
 
-# There is a thing that works with the GET,POST,Patch,DELETE functionalities of api work . (videos from 30-40 )
+# There is a thing ( rout.js ) that works with the GET,POST,Patch,DELETE functionalities of api work . (videos from 30-40 )

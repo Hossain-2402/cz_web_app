@@ -51,18 +51,7 @@ const ProductsScreen = ()=>{
 				{products.map((item,index) =>{
 		            return (
 			            <Link href={`/products/${item.productId}`} key={index} className="product" 
-				            onClick={() =>{
-				            	let isAdded = false;
-				            	for(let i=0;i<cart.length;i++){
-				            		if(cart[i].productId === item.productId){
-				            			isAdded = true;
-				            		}
-				            	}
-				            	if(!isAdded){	
-					            	dispatch(addToCartFunction(item));
-					            	dispatch(increment());
-				            	}
-			            }}>
+				            >
 							{/*
 								<div class="mouse m1"></div>
 								<div class="mouse m2"></div>

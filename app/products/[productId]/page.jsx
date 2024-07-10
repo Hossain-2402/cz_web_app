@@ -5,11 +5,23 @@ import {useState,useEffect} from "react";
 import db from "./firebase_in_product_detail_screen";
 import firebase from "firebase/compat/app";
 import Link from "next/link";
-import { revalidatePath } from 'next/cache'
+import { revalidatePath } from 'next/cache';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement, reset, addToCartFunction } from '../../store/reducer.js';
 
 
 
 const ProductDetailScreen = ({params})=>{
+
+
+  const cartLength = useSelector((state) => state.cartLength);
+  const cart = useSelector((state)=> state.cart);
+  const dispatch = useDispatch();
+
+
+  const [bgCOLOR,setBgCOLOR] = useState("#E9BD42");
+  const [add_to_cart_btn_text,set_add_to_cart_btn_text] = useState("Add to cart");
+
 
 	const [currentProduct,setCurrentProduct] = useState({
         product_name : "Product Name",
@@ -33,7 +45,20 @@ const ProductDetailScreen = ({params})=>{
 		}
 	  });
     });
+
+    for(let i=0;i<cartLength;i++){
+    	if(cart[i].productId === params.productId){
+    		console.log("found");
+    		setBgCOLOR("grey");
+    		set_add_to_cart_btn_text("Added");
+    	}
+    }
   },[]);
+
+  const hideBtn = ()=>{
+  	setBgCOLOR("grey");
+  	set_add_to_cart_btn_text("Added");
+  }
 
 
 
@@ -50,6 +75,7 @@ const ProductDetailScreen = ({params})=>{
 			<div className="path_to_current_page_area">
 				<Link href="/" as="/" className="nevigation_redirect_btn">Home</Link> / <Link href="/products" as="/products" className="nevigation_redirect_btn">Products</Link> / {currentProduct.product_name}
 			</div>
+
 
 			<div className="product_detail_area">
 				<div className="product_detail_image_area">
@@ -69,6 +95,21 @@ const ProductDetailScreen = ({params})=>{
 					<div class="detail_price">৳ {currentProduct.product_price}</div>
 				</div>
 			</div>
+
+			<div style={{ background:bgCOLOR }} className="add_to_cart_btn"
+				onClick={() =>{
+          	let isAdded = false;
+          	for(let i=0;i<cart.length;i++){
+          		if(cart[i].productId === currentProduct.productId){
+          			isAdded = true;
+          		}
+          	}
+          	if(!isAdded){	
+            	dispatch(addToCartFunction(currentProduct));
+            	dispatch(increment());
+            	hideBtn();
+          	}
+        }}>{add_to_cart_btn_text}</div>
 		</div>
 		);
 }

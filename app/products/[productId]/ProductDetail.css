@@ -130,6 +130,20 @@ body{
 }
 
 
+.add_to_cart_btn{
+	padding:2vh 2vw;
+	margin:10vh 0 5vh 50%;
+	transform: translate(-50%,0);
+	/*background: #E9BD42;*/
+	color:black;
+	border-radius: 10px;
+	box-shadow: 0 0 10px black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
 
 @media(max-width:991px){
 
@@ -197,6 +211,9 @@ body{
 		overflow-y: scroll ;
 	}
 
+	.add_to_cart_btn{
+		margin:5vh 0 5vh 50%;
+	}
 
 }
 
