@@ -45,12 +45,13 @@ export default function RootLayout({
       <Provider store={store}>
       <link rel="styleSheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
+      <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet"/>
       
       <div className="navigation_area">
 
         <div className="user_input_area">
 
-          <Link href="/" as="/" className="logo">LOGO</Link>
+          <Link href="/" as="/" className="logo">CZ</Link>
 
           <div className="search_bar_area">
             <input type="text" placeholder="Enter the name of the book" className="search_bar"/>

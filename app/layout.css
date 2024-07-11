@@ -31,7 +31,9 @@ body{
 	font-weight: 700;
 	text-decoration: none;
 	color:black;
-	font-family: verdana;
+	font-family: "Anton SC", sans-serif;
+	font-size: 40px;
+	color:#E9BD42;
 }
 
 .search_bar_area{
