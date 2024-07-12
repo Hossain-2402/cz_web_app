@@ -3,6 +3,21 @@ body{
 	margin: 0;
 }
 
+
+::-webkit-scrollbar{
+  width:.7em;
+}
+
+::-webkit-scrollbar-track{
+  background:rgba(0,0,0,.01);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background:black;
+  border-radius: 10px;
+}
+
+
 .ProductDetailScreen{
 	margin:25vh 0 0 0;
 }
@@ -101,15 +116,16 @@ body{
 }
 
 .detail_product_name{
-	flex: 2;
-	font-family: verdana;
+	flex: .2;
+	font-family: "Anton SC", sans-serif;
 	font-size: 30px;
+	padding:2vh 0;
 	width:100%;
 }
 
 
 .detail_category_name{
-	flex: 1;
+	flex: .1;
 	font-family: verdana;
 	width:100%;
 /*	color:#E9BD42;*/
@@ -117,8 +133,9 @@ body{
 }
 
 .detail_product_description{
-	flex: 10;
+	height:auto;
 	padding:2vh 0;
+	overflow: scroll;
 	font-family: verdana;
 	width:100%;
 }
@@ -202,12 +219,16 @@ body{
 	}
 
 	.detail_product_name{
-		font-weight: 600;
+		letter-spacing: 1px;
+		font-size: 15px;
+		margin:1vh 0 0 0;
+		padding:2vh 0 0 0;
 	}
 
 	.detail_product_description{
-		height:auto;
-/*		overflow-x: wrap ;*/
+		width:100%;
+		text-align: justify;
+		overflow-x: scroll ;
 		overflow-y: scroll ;
 	}
 

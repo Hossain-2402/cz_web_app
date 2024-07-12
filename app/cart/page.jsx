@@ -2,11 +2,12 @@
 
 import "./CartScreen.css";
 import {useState,useEffect} from "react";
-import db from "../products/firebase_in_products";
+import db from "./firebase_in_cart";
 import firebase from "firebase/compat/app";
 import Link from "next/link";
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement, reset, addToCartFunction } from '../store/reducer.js';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const CartScreen = ()=>{
@@ -15,6 +16,8 @@ const CartScreen = ()=>{
 	const cartProducts = useSelector((state)=> state.cart);
 
 	const [position_of_the_detail_area,set_position_of_the_detail_area] = useState("-200vw"); 
+
+	const [position_of_the_checkouh_user_info_input_area,set_position_of_the_checkouh_user_info_input_area] = useState("-200vw"); 
 
 	const [currentProduct,setCurrentProduct] = useState({
 		product_name : "Product Name",
@@ -37,6 +40,34 @@ const CartScreen = ()=>{
 
 	const [tempQuantity,setTempQuantity] = useState(1);
 
+	const [total_product_price,set_total_product_price] = useState(0);
+
+	const [total_purchase_price,set_total_purchase_price] = useState(0);
+
+	const shipping_price = 70;
+
+
+	const [customerName,setCustomerName] = useState("");
+	const [customerLocation,setCustomerLocation] = useState("");
+	const [customerNumber,setCustomerNumber] = useState("");
+	const [customerEmail,setCustomerEmail] = useState("");
+
+	const [checkoutId,setCheckoutId] = useState("");
+	
+	const [positionOfThis,setPositionOfThis] = useState(0);
+
+
+	useEffect(()=>{
+		let cost = 0;
+		for(let i=0;i<cartProducts.length;i++){
+			cost = cost + (cartProducts[i].quantity * parseInt(cartProducts[i].product_price));
+		}
+		set_total_product_price(cost);
+		set_total_purchase_price(cost+shipping_price)
+	},[cartProducts,total_product_price])
+
+
+
 	const smallSize = ()=>{
 	    cartProducts[tempIndex].sizes = "S";
 	    setTempSize("S");
@@ -58,19 +89,67 @@ const CartScreen = ()=>{
 		let a = tempQuantity;
 		setTempQuantity(a+1);
 		cartProducts[tempIndex].quantity = cartProducts[tempIndex].quantity + 1;
+		set_total_product_price(total_product_price + parseInt(cartProducts[tempIndex].product_price));
 	}
 	const decreaseQuantity = ()=>{
 		let a = tempQuantity;
 		if(tempQuantity > 0){
 			setTempQuantity(a-1);
 			cartProducts[tempIndex].quantity = cartProducts[tempIndex].quantity - 1;
+		set_total_product_price(total_product_price - parseInt(cartProducts[tempIndex].product_price));
 		}
+	}
+
+
+	const handle_customer_name = (e)=>{
+	setCustomerName(e.target.value);
+	}
+
+	const handle_customer_location = (e)=>{
+	setCustomerLocation(e.target.value);
+	}
+
+	const handle_customer_number = (e)=>{
+	setCustomerNumber(e.target.value);
+	}
+
+	const handle_customer_email = (e)=>{
+	setCustomerEmail(e.target.value);
+	}
+
+
+	const placeAnOrder = ()=>{
+		if(customerName === "" || customerLocation === "" || customerNumber === "" || customerEmail === ""){
+		  alert("Fillup the form first");
+		}
+		else{
+
+		  const tempUniqueId = uuidv4();
+		  setCheckoutId(tempUniqueId);
+		  db.collection('orders').add({ 
+		    products: cartProducts,
+		    customerName: customerName,
+		    customerLocation : customerLocation,
+		    customerNumber : customerNumber,
+		    customerEmail : customerEmail,
+		    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+		    checkoutID : tempUniqueId
+
+		  });
+		  setCustomerName("");
+		  setCustomerLocation("");
+		  setCustomerEmail("");
+		  setCustomerNumber("");
+		  setPositionOfThis(1);
+    }
 	}
 
 
 
 	return (
 		<div className="CartScreen">
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
+      <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet"/>
 			<div className="desktop_menu_item_selected_style_for_Cart_page">
 				<div className="nevigation_btn_background_style_in_Cart_page bg_white"> </div>
 				<div className="nevigation_btn_background_style_in_Cart_page bg_white"></div>
@@ -120,26 +199,61 @@ const CartScreen = ()=>{
 					<div className="increase_auantity_btn" onClick={()=>{increaseQuantity()}}>+</div>
 		        </div>
 
+
+			</div>
+
+			<div style={{ left : position_of_the_checkouh_user_info_input_area }} className="checkouh_user_info_input_area">
+				<div className="exit_detail_screen" onClick={()=>{ set_position_of_the_checkouh_user_info_input_area("-200vw") }} ><i className="fa fa-times"></i></div>
+
+				<div className="input_area">
+					<input type="text" placeholder="Enter Your name" className="use_name" onChange={(e)=>{handle_customer_name(e)}} value={customerName}/>
+					<textarea type="text" placeholder="Enter Your location" className="use_name" onChange={(e)=>{handle_customer_location(e)}} value={customerLocation}></textarea>
+					<input type="email" placeholder="Enter Your email" className="use_name" onChange={(e)=>{handle_customer_email(e)}} value={customerEmail}/>
+					<input type="number" placeholder="Enter Your number" className="use_name" onChange={(e)=>{handle_customer_number(e)}} value={customerNumber}/>
+				</div>
+
+				<div className="confirm_order_btn" onClick={()=>{placeAnOrder()}}> Confirm Order </div>
+
+				<div style={{opacity : positionOfThis}} className="checkoutId">Your Id is : {checkoutId}</div>
+				<div style={{opacity : positionOfThis}} className="note">Remember This id and go to "Order Status" from "Menu" to see status of your order</div>
+
 			</div>
 
 
 			{cartProducts.length === 0 ?
 
-			<div className="no_product_in_cart_area">No items in cart</div>
+				<div className="no_product_in_cart_area">No items in cart</div>
+			:
+				<>
+					<div className="cart_products_area" >
+						{cartProducts.map((item,index) =>{
+				            return (
+					            <div key={index} className="cartProduct" onClick={()=>{ set_position_of_the_detail_area("0vw"); setCurrentProduct(item); set_leading_image(item.leading_image); setTempIndex(index); setTempSize(item.sizes); setTempQuantity(item.quantity); }}>
+									<div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat',backgroundSize : '85%'}}  className="cartProductImage"></div>
+									<div className="cart_product_name">{item.product_name} </div>
+									<div className="cart_price">৳ {item.product_price}</div>
+					            </div>);
+				          })}
+					</div>
 
-			 :
- 				<div className="cart_products_area" >
-					{cartProducts.map((item,index) =>{
-			            return (
-				            <div key={index} className="cartProduct" onClick={()=>{ set_position_of_the_detail_area("0vw"); setCurrentProduct(item); set_leading_image(item.leading_image); setTempIndex(index); setTempSize(item.sizes); setTempQuantity(item.quantity); }}>
-								<div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat',backgroundSize : '85%'}}  className="cartProductImage"></div>
-								<div className="cart_product_name">{item.product_name} </div>
-								<div className="cart_price">৳ {item.product_price}</div>
-				            </div>);
-			          })}
-				</div>
+					<div className="cart_products_pricing_area">
+					  	<div className="lable_area">
+					  		<div className="total_price_lable">Total Porduct price :  </div>
+					  		<div className="shipping_price_lable">Shipping price : </div>
+					  		<div className="total_purchase_price_lable">Total cost : </div>
+					  	</div>
+					  	<div className="total_price_area">
+					  		<div className="total_product_price">৳ {total_product_price} </div>
+					  		<div className="shipping_price">৳ 70</div>
+					  		<div className="total_purchase_price">৳ {total_purchase_price}</div>
+					  	</div>
+					</div>
+
+					<div className="checkout_btn" onClick={()=>{ set_position_of_the_checkouh_user_info_input_area("0") }}>Checkout</div>
+				</>
 
 			  }
+
 
 
 

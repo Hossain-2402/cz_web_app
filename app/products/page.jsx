@@ -39,6 +39,8 @@ const ProductsScreen = ()=>{
 
 	return (
 		<div className="ProductsScreen">
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
+      <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet"/>
 			<div className="desktop_menu_item_selected_style_for_books_page">
 				<div className="nevigation_btn_background_style_in_books_page bg_white"> </div>
 				<div className="nevigation_btn_background_style_in_books_page b"></div>
@@ -64,7 +66,7 @@ const ProductsScreen = ()=>{
 								<div class="mouse m9"></div>
 							*/}
 
-							<div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat',backgroundSize : '85%'}}  className="image"></div>
+							<div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat'}}  className="image"></div>
 							<div className="product_name">{item.product_name} </div>
 							<div className="price">৳ {item.product_price}</div>
 			            </Link>);

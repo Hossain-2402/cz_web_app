@@ -76,13 +76,14 @@ body{
 	width:100%;
 	background-position: center center;
 	transition: .4s;
+	background-size: 100%;
 }
 
 .product_name{
 	flex:.2;
 	width:20vw;
 	padding:2vh 0 2vh 0;
-	font-family: verdana;
+	font-family: "Anton SC", sans-serif;
 	float: left;
 	transition: .4s;
 }
@@ -117,20 +118,22 @@ body{
 		grid-gap: 4vw 4vw;
 	}
 	.product{
-		height:30vh;
+		height:50vh;
 		padding:1.5vw 1.5vw 2vh 1.5vw;
 	}
 
 	.image{
-
+		background-size: 100%;
 		background-position: center center;
 	}
 
 	.product_name{
+		width:100%;
 		font-size: 12px;
 	}
 
 	.price{
+		width:100%;
 		font-size: 20px;
 	}
 

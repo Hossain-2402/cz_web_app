@@ -64,6 +64,8 @@ const ProductDetailScreen = ({params})=>{
 
 	return (
 		<div className="ProductDetailScreen">
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
+      <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet"/>
 			<div className="desktop_menu_item_selected_style_for_books_page_in_detail_area">
 				<div className="nevigation_btn_background_style_in_books_page_in_detail_area bg_white_in_detail_area b_in_detail_area" >{currentProduct.product_name} </div>
 				<div className="nevigation_btn_background_style_in_books_page_in_detail_area bg_white_in_detail_area"></div>
@@ -90,7 +92,7 @@ const ProductDetailScreen = ({params})=>{
 				</div>
 				<div className="product_detail_info_area">
 					<div class="detail_product_name"> {currentProduct.product_name} </div>
-					<div class="detail_category_name">Category: category</div>
+					{/*<div class="detail_category_name">Category: category</div>*/}
 					<pre class="detail_product_description">{currentProduct.product_detail}</pre>
 					<div class="detail_price">৳ {currentProduct.product_price}</div>
 				</div>
