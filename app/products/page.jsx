@@ -34,7 +34,7 @@ const ProductsScreen = ()=>{
   	db.collection('products').orderBy("timestamp","desc").onSnapshot(snapshot=>{
       setProducts(snapshot.docs.map(doc => doc.data()));
     });
-  },[]);
+  },[products]);
 
 
 	return (

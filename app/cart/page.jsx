@@ -53,7 +53,7 @@ const CartScreen = ()=>{
 	const [customerEmail,setCustomerEmail] = useState("");
 
 	const [checkoutId,setCheckoutId] = useState("");
-	
+
 	const [positionOfThis,setPositionOfThis] = useState(0);
 
 
@@ -177,7 +177,6 @@ const CartScreen = ()=>{
 
 					<div className="cart_product_detail_info_area">
 						<div class="cart_detail_product_name"> {currentProduct.product_name} </div>
-						<div class="cart_detail_category_name">Category: category</div>
 						<pre class="cart_detail_product_description">{currentProduct.product_detail}</pre>
 						<div class="cart_detail_price">৳ {currentProduct.product_price}</div>
 					</div>
@@ -215,7 +214,7 @@ const CartScreen = ()=>{
 				<div className="confirm_order_btn" onClick={()=>{placeAnOrder()}}> Confirm Order </div>
 
 				<div style={{opacity : positionOfThis}} className="checkoutId">Your Id is : {checkoutId}</div>
-				<div style={{opacity : positionOfThis}} className="note">Remember This id and go to "Order Status" from "Menu" to see status of your order</div>
+				<div style={{opacity : positionOfThis}} className="note">Remember This id and go to ( Order Status ) from ( Menu ) to see status of your order</div>
 
 			</div>
 
@@ -262,3 +261,5 @@ const CartScreen = ()=>{
 }
 
 export default CartScreen;
+
+// asd;

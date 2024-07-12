@@ -187,19 +187,12 @@ body{
 }
 
 .cart_detail_product_name{
-	flex: 2;
+	flex: .25;
 	font-family: "Anton SC", sans-serif;
 	font-size: 30px;
 	width:100%;
 }
 
-.cart_detail_category_name{
-	flex: 1;
-	font-family: verdana;
-	width:100%;
-/*	color:#E9BD42;*/
-	cursor: pointer;
-}
 
 .cart_detail_product_description{
 	height:auto;

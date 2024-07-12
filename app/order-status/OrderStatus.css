@@ -45,6 +45,75 @@ body{
 	flex:1.5;
 }
 
+
+.order_status_input{
+	height:8vh;
+	width:45vw;
+	outline: none;
+	border-bottom:4px solid black;
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	font-family: verdana;
+	font-weight: 600;
+	background:none;
+	backdrop-filter: blur(20px);
+	padding:.5vh 0 .5vh 2vw;
+	margin:10vh 0 0 50%;
+	transform: translate(-50%,0);
+}
+::placeholder {
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.see_status_btn{
+	width:20vw;
+	padding:2vh 0;
+	text-align: center;
+	border-top-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	color:black;
+	margin:10vh 0 10vh 50%;
+	transform: translate(-50%,0);
+	float: left;
+	cursor: pointer;
+	border:2px solid black;  
+	font-weight: 700;
+	transition: .5s ;
+}
+
+.see_status_btn:hover{
+	background: #E9BD42;
+}
+
+.order_status_area{
+	position: fixed;
+	padding:2vh 0;
+	height:100vh;
+	width:100vw;
+	top:0;
+	box-shadow: 0 0 200px black;
+	overflow:scroll;
+	overflow-x: hidden;
+	backdrop-filter:blur(20px);
+	z-index: 102;
+	float: left;
+	transition: .7s;
+}
+
+.exit_detail_screen{
+	position: fixed;
+	top:2.5vh;
+	right:2%;
+	background:black;
+	color:white;
+	padding:1vh 2vw;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
 @media(max-width:991px){
 	.OrderStatusScreen{
 		margin: 15vh 0 0 0;
@@ -57,7 +126,58 @@ body{
 	.nevigation_btn_background_style_in_order_status_page{
 		padding:0;
 	}
+
+	.order_status_input{
+		width:90vw;
+	}
+
+	.see_status_btn{
+		width:70vw;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media(min-width:1024px){
 	.desktop_menu_item_selected_style_for_order_status_page{
