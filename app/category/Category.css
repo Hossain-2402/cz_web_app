@@ -1,6 +1,20 @@
 body{
 	padding:0;
 	margin: 0;
+	width:100%;
+	overflow-x:hidden ;
+}
+
+::-webkit-scrollbar{
+  width:.7em;
+}
+::-webkit-scrollbar-track{
+  background:rgba(0,0,0,.01);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background:black;
+  border-radius: 10px;
 }
 
 .CategoryScreen{
@@ -45,17 +59,28 @@ body{
 	flex:1.5;
 }
 
-
 .card{
-	height:100vh;
-	width:100vw;
-	float: left;
 	position: sticky;
 	top:0;
+	height:70vh;
+	width:40vw;
+	background: url(headerImage.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	margin:2.5vh 0 2.5vh 50%;
+	border-radius: 10px;
+	text-decoration: none;
+	color:black;
+	box-shadow: 0 0 10px black;
+	transform: translate(-50%,0);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: .4s;
 }
+
 
 @media(max-width:991px){
 	.CategoryScreen{
@@ -69,7 +94,55 @@ body{
 	.nevigation_btn_background_style_in_category_page{
 		padding:0;
 	}
+
+	.card{
+		height:80vh;
+		width:90vw;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media(min-width:1024px){
 	.desktop_menu_item_selected_style_for_category_page{

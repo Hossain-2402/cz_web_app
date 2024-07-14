@@ -54,17 +54,7 @@ const ProductsScreen = ()=>{
 		            return (
 			            <Link href={`/products/${item.productId}`} key={index} className="product" 
 				            >
-							{/*
-								<div class="mouse m1"></div>
-								<div class="mouse m2"></div>
-								<div class="mouse m3"></div>
-								<div class="mouse m4"></div>
-								<div class="mouse m5"></div>
-								<div class="mouse m6"></div>
-								<div class="mouse m7"></div>
-								<div class="mouse m8"></div>
-								<div class="mouse m9"></div>
-							*/}
+
 
 							<div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat'}}  className="image"></div>
 							<div className="product_name">{item.product_name} </div>
