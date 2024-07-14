@@ -13,15 +13,18 @@ const CategoryScreen = ()=>{
 
   var list = [];
 
+  var tempList = [];
+
   useEffect(()=>{
     db.collection('products').orderBy("timestamp","desc").onSnapshot(snapshot=>{
       snapshot.docs.map(doc=>{
       	if(!list.includes(doc.data().category)){
-			list.push(doc.data().category);
+      		list.push(doc.data().category);
+      		tempList.push({categoryName: doc.data().category,categoryImage: doc.data().leading_image })
       	}
       });
-      setProducts(list);
-      console.log(products);
+      setProducts(tempList);
+      console.log(tempList);
     });
   },[]);
 
@@ -35,9 +38,12 @@ const CategoryScreen = ()=>{
 				<div className="nevigation_btn_background_style_in_category_page bg_white o_s"></div>
 			</div>
 
-			{products.map((item)=>{
+			{products.map((item,index)=>{
 				return (
-						<Link href={`/category/${item}`}  className="card">{item}</Link>
+						<Link key={index} style={{ backgroundImage: "url("+item.categoryImage+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat' }} href={`/category/${item.categoryName}`}  className="card">
+							<div className="layer"></div>
+							<p className="categoryName">{item.categoryName}</p>
+						</Link>
 					);
 			})}
 
