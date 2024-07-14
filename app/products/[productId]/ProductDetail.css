@@ -134,10 +134,11 @@ body{
 
 .detail_product_description{
 	height:auto;
-	padding:2vh 0;
-	overflow: scroll;
+	width:auto;
+	padding:5vh 0;
+	word-wrap: wrap;
+	overflow-y: scroll;
 	font-family: verdana;
-	width:100%;
 }
 .detail_price{
 	flex: 1;
@@ -228,7 +229,6 @@ body{
 	.detail_product_description{
 		width:100%;
 		text-align: justify;
-		overflow-x: scroll ;
 		overflow-y: scroll ;
 	}
 

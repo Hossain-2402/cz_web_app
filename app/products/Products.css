@@ -52,7 +52,7 @@ body{
 	transform: translate(-50%,0);
 	display:grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 2vw 2vw;
+	grid-gap: 5vw 2vw;
 	perspective: 50em;
 }
 
@@ -67,8 +67,12 @@ body{
 	flex-direction: column;
 	text-decoration: none;
 	color:black;
-/*	border: 2px solid black;*/
-/*	box-shadow: 0 0 10px black;*/
+	transition: .4s;
+}
+
+.product:hover{
+	transform: scale(1.1);
+	padding:2vh 2vw;
 }
 
 .image{

@@ -59,8 +59,8 @@ export default function RootLayout({
           </div>
 
           <div className="log_in_area">
-            <div className="user_profile_image"></div>
-            <Link href="/cart" as="/cart" className="cart_btn"><i className="fa fa-shopping-cart"></i></Link>
+            <div className="user_profile_image"><i className="fa fa-shopping-cart"></i></div>
+            <Link href="/cart" as="/cart" className="cart_btn">Cart</Link>
           </div>
         {/*fa fa-bars*/}
           <div className="mobile_menu_btn" onClick={()=>{showMenuAreaInMobile()}}><i className={class_name_of_icon}></i></div>

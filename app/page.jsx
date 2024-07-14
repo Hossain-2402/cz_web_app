@@ -4,6 +4,7 @@ import "./Home.css";
 import { useEffect,useState } from "react";
 import db from "./firebase";
 import firebase from "firebase/compat/app";
+import Link from "next/link";
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement, reset } from './store/reducer.js';
 
@@ -27,9 +28,12 @@ const Home = ()=>{
         sizes : "S",
         timestamp : firebase.firestore.FieldValue.serverTimestamp()}]);
 
+
+  var first_five_products = [];
+
   useEffect(()=>{
     db.collection('products').orderBy("timestamp","desc").onSnapshot(snapshot=>{
-      setProducts(snapshot.docs.map(doc => doc.data()));
+      setProducts(snapshot.docs.map(doc=> doc.data()));
     });
   },[]);
 
@@ -54,15 +58,18 @@ const Home = ()=>{
         </div>
       </div>
 
-      <div className="products_area">
-        <h2 className="products_text">Products</h2>
+      <h2 className="products_text">Latest products</h2>
+
+      <div className="first_five_products_products_area">
+        {products.filter((item, idx) => idx < 4).map((item,index) => {
+          return (
+            <Link href={`/products/${item.productId}`} key={index} className="first_five_products_product" >
+              <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat'}}  className="first_five_products_image"></div>
+              <div className="first_five_products_product_name">{item.product_name} </div>
+              <div className="first_five_products_price">৳ {item.product_price}</div>
+            </Link>);
+        })}
       </div>
-
-
-      <h1>Home: {count}</h1>
-      <button onClick={() => dispatch(increment())}>Increment</button>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
-      <button onClick={() => dispatch(reset())}>Reset</button>
 
     </div>
     );
@@ -71,18 +78,3 @@ const Home = ()=>{
 export default Home;
 
 
-
-/*
-
-
-app
- --store 
-    --store.js
-products
- --p.js
-
-
-tell me a way i can import store.js file in p.js in next js 
-
-
-*/

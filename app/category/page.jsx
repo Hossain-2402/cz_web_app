@@ -12,6 +12,15 @@ const CategoryScreen = ()=>{
 			</div>
 
 			Category
+
+			
+			<div>
+			      <div className="card">Card1</div>
+			      <div className="card">Card2</div>
+			      <div className="card">Card3</div>
+			      <div className="card">Card4</div>
+			      <div className="card">Card5</div>
+			</div>
 		</div>
 		);
 }

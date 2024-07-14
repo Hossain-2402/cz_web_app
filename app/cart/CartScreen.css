@@ -70,8 +70,6 @@ body{
 	flex-direction: column;
 	text-decoration: none;
 	color:black;
-/*	border: 2px solid black;*/
-/*	box-shadow: 0 0 10px black;*/
 }
 
 .cartProductImage{
@@ -99,7 +97,6 @@ body{
 	font-weight: 525;
 	transition: .4s;
 }
-
 
 .no_product_in_cart_area{
 	height:80vh;
@@ -479,10 +476,11 @@ body{
 	.cart_products_area{
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 4vw 4vw;
-	}
+		}
+		 
 	.cartProduct{
 		height:30vh;
-		padding:1.5vw 1.5vw 2vh 1.5vw;
+/*		padding:1.5vw 1.5vw 2vh 1.5vw;*/
 	}
 
 	.cartProductImage{
