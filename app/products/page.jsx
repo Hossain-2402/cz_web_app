@@ -63,6 +63,17 @@ const ProductsScreen = ()=>{
 	          })}
 			</div>
 
+			
+      <div className="footer">
+        <div className="layer_1">
+          <Link href="/" as="/" className="logo_in_footer">CZ</Link>
+          <a href="https://www.facebook.com/comfortzone.outfit" className="facebook">Facebook</a>
+          <a href="" className="instagram">Instagram</a>
+          <a href="" className="twitter">Twitter</a>
+        </div>
+        <div className="layer_2">© 2024 CZ. All rights reserved.</div>
+      </div>
+
 		</div>
 		);
 }

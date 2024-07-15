@@ -30,10 +30,15 @@ const Home = ()=>{
 
   const [categories,setCategories] = useState([]);
 
+  const [currentCategoryProducts,setCurrentCategoryProducts] = useState([]);
+
 
   var list = [];
 
   var tempList = [];
+
+  var categoryList = [];
+
 
   useEffect(()=>{
     db.collection('products').orderBy("timestamp","desc").onSnapshot(snapshot=>{
@@ -49,12 +54,23 @@ const Home = ()=>{
       });
       setCategories(tempList);
     });
-  },[]);
+
+    db.collection('products').orderBy("timestamp","desc").onSnapshot(snapshot=>{
+      snapshot.docs.map(doc =>{
+      if(doc.data().category === "drop-shoulder"){
+        categoryList.push(doc.data())
+      }
+      });
+      setCurrentCategoryProducts(categoryList);
+    });
+  },[currentCategoryProducts]);
 
   return (
     <div className="Home">
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
 
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
+      <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet"/>
       <div className="desktop_menu_item_selected_style_for_home_page">
         <div className="nevigation_btn_background_style_in_home_page h"> </div>
         <div className="nevigation_btn_background_style_in_home_page bg_white"></div>
@@ -98,6 +114,32 @@ const Home = ()=>{
               </Link>
             );
         })}
+      </div>
+
+
+      <h2 className="products_text">Drop Shoulders</h2>
+
+      <div className="first_five_products_products_area">
+        {currentCategoryProducts.map((item,index) => {
+          return (
+            <Link href={`/products/${item.productId}`} key={index} className="first_five_products_product" >
+              <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat'}}  className="first_five_products_image"></div>
+              <div className="first_five_products_product_name">{item.product_name} </div>
+              <div className="first_five_products_price">৳ {item.product_price}</div>
+            </Link>);
+        })}
+      </div>
+
+
+
+      <div className="footer">
+        <div className="layer_1">
+          <Link href="/" as="/" className="logo_in_footer">CZ</Link>
+          <a href="https://www.facebook.com/comfortzone.outfit" className="facebook">Facebook</a>
+          <a href="" className="instagram">Instagram</a>
+          <a href="" className="twitter">Twitter</a>
+        </div>
+        <div className="layer_2">© 2024 CZ. All rights reserved.</div>
       </div>
 
     </div>

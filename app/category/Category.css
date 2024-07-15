@@ -99,6 +99,83 @@ body{
 	z-index: 100;
 }
 
+.footer{
+	height:20vh;
+	width:100vw;
+	float: left;
+	display: flex;
+	border-top:2px solid black;
+	flex-direction: column;
+	gap:1vh;
+	margin:20vh 0 0 0;
+	padding:2vh 0;
+}
+
+.layer_1{
+	flex: 1;
+	width:50vw;
+	margin:0 0 0 50%;
+	transform: translate(-50%,0);
+	display: flex;
+	gap:1vw;
+}
+
+.logo_in_footer{
+	flex:1;
+	display: flex;
+	text-decoration: none;
+	color:black;
+	font-size: 25px;
+	justify-content: center;
+	align-items: center;
+	font-family: "Anton SC", sans-serif;
+}
+
+.facebook{
+	flex:1;
+	display: flex;
+	text-decoration: none;
+	color:black;
+	font-size: 25px;
+	justify-content: center;
+	align-items: center;
+	font-family: "Anton SC", sans-serif;
+}
+
+.instagram{
+	flex:1;
+	display: flex;
+	text-decoration: none;
+	color:black;
+	font-size: 25px;
+	justify-content: center;
+	align-items: center;
+	font-family: "Anton SC", sans-serif;
+}
+
+.twitter{
+	flex:1;
+	display: flex;
+	text-decoration: none;
+	color:black;
+	font-size: 25px;
+	justify-content: center;
+	align-items: center;
+	font-family: "Anton SC", sans-serif;
+}
+
+.layer_2{
+	flex: 1;
+	width:90vw;
+	margin:0 0 0 50%;
+	transform: translate(-50%,0);
+	color:grey;
+	font-family: verdana;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
 
 @media(max-width:991px){
 	.CategoryScreen{
@@ -116,6 +193,30 @@ body{
 	.card{
 		height:80vh;
 		width:90vw;
+	}
+	
+	.footer{
+		height:10vh;
+	}
+
+	.layer_1{
+		width:70vw;
+	}
+
+	.logo_in_footer{
+		font-size: 12px;
+	}
+
+	.facebook{
+		font-size: 12px;
+	}
+
+	.instagram{
+		font-size: 12px;
+	}
+
+	.twitter{
+		font-size: 12px;
 	}
 }
 
