@@ -196,6 +196,52 @@ body{
 	transition: .4s;
 }
 
+.cover{
+	margin:10vh 0 0 50%;
+	transform: translate(-50%,0);
+	float: left;
+}
+
+.card{
+	position: sticky;
+	top:0;
+	height:70vh;
+	width:70vw;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	margin:2.5vh 0 2.5vh 50%;
+	border-radius: 20px;
+	text-decoration: none;
+	color:white;
+	font-size: 40px;
+	box-shadow: 0 0 10px black;
+	transform: translate(-50%,0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	transition: .4s;
+}
+
+.layer{
+	position: absolute;
+	top:0;
+	left:0;
+	content:'';
+	height:100%;
+	width:100%;
+	background: rgba(0,0,0,.7);
+}
+
+.categoryName{
+	color:white;
+	z-index: 100;
+}
+
+
+
 
 @media(max-width:991px){
 	.Home{
@@ -253,6 +299,11 @@ body{
 	.first_five_products_price{
 		width:100%;
 		font-size: 20px;
+	}
+
+	.card{
+		height:80vh;
+		width:90vw;
 	}
 
 }

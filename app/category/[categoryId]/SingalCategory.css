@@ -1,0 +1,162 @@
+body{
+	padding:0;
+	margin: 0;
+	width:100vw;
+	overflow-x: hidden;
+}
+
+
+::-webkit-scrollbar{
+  width:.7em;
+}
+
+::-webkit-scrollbar-track{
+  background:rgba(0,0,0,.01);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background:black;
+  border-radius: 10px;
+}
+
+
+.SingalCategory{
+	margin:12vh 0 0 0;
+}
+
+.desktop_menu_item_selected_style_for_category_page_in_detail_area{
+	background: red;
+	position:fixed;
+	width:100vw;
+	left:50%;
+	transform: translate(-50%,0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: white;
+	z-index: 101;
+}
+
+.nevigation_btn_background_style_in_category_page_in_detail_area{
+	height:3vh;
+	flex:1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding:2vh 2vw;
+	color:black;
+/*	border-radius: 10px;*/
+	text-decoration: none;
+	font-weight: 550;
+	transition: .2s;	
+}
+
+.bg_white_in_detail_area{
+	background: white;
+}
+
+.b_in_detail_area{
+	background:#E9BD42;
+}
+
+.o_s_in_detail_area{
+	flex:1.5;
+}
+
+.singalCategory_products_area{
+	height:auto;
+	width:98vw;
+	margin:10vh 0 0 50%;
+	float: left;
+	transform: translate(-50%,0);
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 5vw 2vw;
+	perspective: 50em;
+}
+
+.singalCategory_product{
+	height:70vh;
+	border-radius: 10px;
+	overflow: hidden;
+	float:left;
+	cursor: pointer;
+	display: flex;
+	gap:1vh;
+	flex-direction: column;
+	text-decoration: none;
+	color:black;
+	transition: .4s;
+}
+
+.singalCategory_product:hover{
+	transform: scale(1.1);
+	padding:2vh 2vw;
+}
+
+.singalCategory_image{
+	flex:5;
+	width:100%;
+	background-position: center center;
+	transition: .4s;
+	background-size: 100%;
+}
+
+.singalCategory_product_name{
+	flex:.2;
+	width:20vw;
+	padding:2vh 0 2vh 0;
+	font-family: "Anton SC", sans-serif;
+	float: left;
+	transition: .4s;
+}
+
+.singalCategory_price{
+	flex:.2;
+	width:20vw;
+	font-family: verdana;
+	float: left;
+	font-size: 25px ;
+	font-weight: 525;
+	transition: .4s;
+}
+
+@media(max-width: 991px){
+
+	.SingalCategory{
+		margin: 10vh 0 0 0;
+	}
+	.desktop_menu_item_selected_style_for_category_page_in_detail_area{
+		height:0;
+		width:0;
+		font-size: 0;
+	}
+	.nevigation_btn_background_style_in_category_page_in_detail_area{
+		padding:0;
+	}
+
+	.singalCategory_products_area{
+		margin:5vh 0 0 50%;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1vh 4vw;
+}
+	.singalCategory_product{
+		height:50vh;
+		padding:1.5vw 1.5vw 2vh 1.5vw;
+	}
+
+	.singalCategory_image{
+		background-size: 100%;
+		background-position: center center;
+	}
+
+	.singalCategory_product_name{
+		width:100%;
+		font-size: 12px;
+	}
+
+	.singalCategory_price{
+		width:100%;
+		font-size: 20px;
+	}
+}

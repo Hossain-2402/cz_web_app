@@ -24,7 +24,6 @@ const CategoryScreen = ()=>{
       	}
       });
       setProducts(tempList);
-      console.log(tempList);
     });
   },[]);
 
@@ -37,7 +36,7 @@ const CategoryScreen = ()=>{
 				<div className="nevigation_btn_background_style_in_category_page bg_white"></div>
 				<div className="nevigation_btn_background_style_in_category_page bg_white o_s"></div>
 			</div>
-
+			<div className="cover">
 			{products.map((item,index)=>{
 				return (
 						<Link key={index} style={{ backgroundImage: "url("+item.categoryImage+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat' }} href={`/category/${item.categoryName}`}  className="card">
@@ -46,6 +45,7 @@ const CategoryScreen = ()=>{
 						</Link>
 					);
 			})}
+			</div>
 
 		</div>
 		);

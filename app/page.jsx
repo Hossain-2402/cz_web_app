@@ -28,18 +28,32 @@ const Home = ()=>{
         sizes : "S",
         timestamp : firebase.firestore.FieldValue.serverTimestamp()}]);
 
+  const [categories,setCategories] = useState([]);
+
+
+  var list = [];
+
+  var tempList = [];
 
   useEffect(()=>{
     db.collection('products').orderBy("timestamp","desc").onSnapshot(snapshot=>{
       setProducts(snapshot.docs.map(doc=> doc.data()));
+    });
+
+    db.collection('products').orderBy("timestamp","desc").onSnapshot(snapshot=>{
+      snapshot.docs.map(doc=>{
+        if(!list.includes(doc.data().category)){
+          list.push(doc.data().category);
+          tempList.push({categoryName: doc.data().category,categoryImage: doc.data().leading_image })
+        }
+      });
+      setCategories(tempList);
     });
   },[]);
 
   return (
     <div className="Home">
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
-
-        {/*<div className="background"></div>*/}
 
       <div className="desktop_menu_item_selected_style_for_home_page">
         <div className="nevigation_btn_background_style_in_home_page h"> </div>
@@ -68,6 +82,21 @@ const Home = ()=>{
               <div className="first_five_products_product_name">{item.product_name} </div>
               <div className="first_five_products_price">৳ {item.product_price}</div>
             </Link>);
+        })}
+      </div>
+
+
+      <h2 className="products_text">Catogery</h2>
+
+
+      <div className="cover">
+        {categories.map((item,index)=>{
+          return (
+              <Link key={index} style={{ backgroundImage: "url("+item.categoryImage+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat' }} href={`/category/${item.categoryName}`}  className="card">
+                <div className="layer"></div>
+                <p className="categoryName">{item.categoryName}</p>
+              </Link>
+            );
         })}
       </div>
 
