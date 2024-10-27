@@ -1,0 +1,91 @@
+//   State 
+
+const unserID = {
+	name : "M.Hossain Iban Ehsan",
+	age : 20	
+}
+
+// ACTION function 
+
+const addUserID = (userName , UserAge) =>{
+	return {
+		type : "AddUserID",
+		payload : {
+				name : userName ,
+				age : userAge
+			}
+	}
+	
+}
+
+
+
+----------------------------------------------------------------------------------------------------- CLASS 2 ----------------------------------------------------------------------------------------------------------
+
+
+// CREATE REDUCER
+	
+const userReducer = (state = userID,action)=>{
+	if(action.type == "AddUserID"){
+		return {
+			...state,
+			name : actoin.payload,
+			age : 
+		}
+	}
+	else {
+		state;	
+	}
+}
+
+
+
+----------------------------------------------------------------------------------------------------- CLASS 3 ----------------------------------------------------------------------------------------------------------
+
+const {createStore} = require("redux");   // in the first line 
+
+
+const store = createStore(userReducer);
+
+store.dispatch(addUserID("Hasan Ibna Ehsan", 20))
+
+
+
+
+
+
+
+
+
+[[],[],[]]      	In this place if we want to run a loop to print the values then we will need 2 nested loops. Hence numpy 2
+[[[],[]],[[],[]]]	In this place if we want to run a loop to print the values then we will need 3 nested loops. Hence numpy 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
