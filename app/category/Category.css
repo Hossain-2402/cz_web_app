@@ -65,7 +65,7 @@ body{
 	position: sticky;
 	top:22vh;
 	height:70vh;
-	width:40vw;
+	width:30vw;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -83,6 +83,20 @@ body{
 	overflow: hidden;
 	transition: .4s;
 }
+
+
+.card_image{
+	position: absolute;
+	top:0;
+	left:0;
+/*	object-fit: none;*/
+	content:'';
+	height:100%;
+	width:100%;
+	background: rgba(0,0,0,.7);
+	z-index: -1;
+}
+
 
 .layer{
 	position: absolute;

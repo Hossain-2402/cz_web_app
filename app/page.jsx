@@ -130,9 +130,10 @@ const Home = ()=>{
 
       <div className="first_five_products_products_area">
         {currentCategoryProducts.map((item,index) => {
+          const image_path = item.leading_image;
           return (
             <Link href={`/products/${item.productId}`} key={index} className="first_five_products_product" >
-              <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat'}}  className="first_five_products_image"></div>
+              <img src={image_path} className="first_five_products_image"/>
               <div className="first_five_products_product_name">{item.product_name} </div>
               <div className="first_five_products_price">৳ {item.product_price}</div>
             </Link>);

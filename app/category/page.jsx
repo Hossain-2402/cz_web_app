@@ -39,7 +39,8 @@ const CategoryScreen = ()=>{
 			<div className="cover">
 			{products.map((item,index)=>{
 				return (
-						<Link key={index} style={{ backgroundImage: "url("+item.categoryImage+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat' }} href={`/category/${item.categoryName}`}  className="card">
+						<Link key={index}  href={`/category/${item.categoryName}`}  className="card">
+              <img src={item.categoryImage} className="card_image"/>
 							<div className="layer"></div>
 							<p className="categoryName">{item.categoryName}</p>
 						</Link>

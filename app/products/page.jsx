@@ -56,7 +56,8 @@ const ProductsScreen = ()=>{
 				            >
 
 
-							<div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat'}}  className="image"></div>
+              <img src={item.leading_image} className="image"/>
+
 							<div className="product_name">{item.product_name} </div>
 							<div className="price">৳ {item.product_price}</div>
 			            </Link>);
@@ -79,3 +80,11 @@ const ProductsScreen = ()=>{
 }
 
 export default ProductsScreen;
+
+
+/*
+
+              <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat'}}  className="image"></div>
+
+
+*/

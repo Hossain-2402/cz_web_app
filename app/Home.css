@@ -225,7 +225,7 @@ body{
 	position: sticky;
 	top:20vh;
 	height:70vh;
-	width:70vw;
+	width:30vw;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -248,7 +248,7 @@ body{
 	position: absolute;
 	top:0;
 	left:0;
-	object-fit: none;
+/*	object-fit: none;*/
 	content:'';
 	height:100%;
 	width:100%;
