@@ -7,6 +7,9 @@ import firebase from "firebase/compat/app";
 import Link from "next/link";
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement, reset } from './store/reducer.js';
+import Image from "next/Image";
+
+import HeaderImage from "./headerImage.png";
 
 
 const Home = ()=>{
@@ -80,6 +83,7 @@ const Home = ()=>{
       </div>
 
       <div className="landing_image_area">
+        <Image src={HeaderImage} objectFit="cover"  placeholder="blur" className="landing_image"/>
         <div className="grey_shade_in_landing_image"></div>
         <div className="heading_text_and_btn_area">
           <h1 className="large_image">Comfort Zone</h1>
@@ -92,6 +96,7 @@ const Home = ()=>{
 
       <div className="first_five_products_products_area">
         {products.filter((item, idx) => idx < 4).map((item,index) => {
+          const image_path = item.leading_image;
           return (
             <Link href={`/products/${item.productId}`} key={index} className="first_five_products_product" >
               <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat'}}  className="first_five_products_image"></div>
@@ -149,3 +154,12 @@ const Home = ()=>{
 export default Home;
 
 
+
+
+
+/*
+
+              <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat'}}  className="first_five_products_image"></div>
+
+
+*/

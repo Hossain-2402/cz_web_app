@@ -76,12 +76,19 @@ body{
 	bottom:100vh;
 	height:100vh;
 	width:100%;
-	background:url(headerImage.png);
+/*	background:url(headerImage.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position:top center;
-	background-attachment: fixed;
+	background-position:top center;*/
 	float: left;
+}
+
+.landing_image{
+	position: absolute;
+	left:0;
+	height:100%;
+	width:100%;
+	z-index: -1;
 }
 
 .grey_shade_in_landing_image{
@@ -216,7 +223,7 @@ body{
 
 .card{
 	position: sticky;
-	top:0;
+	top:20vh;
 	height:70vh;
 	width:70vw;
 	background-repeat: no-repeat;
@@ -389,6 +396,7 @@ body{
 	}
 
 	.card{
+		top:15vh;
 		height:80vh;
 		width:90vw;
 	}

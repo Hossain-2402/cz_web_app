@@ -63,7 +63,7 @@ body{
 
 .card{
 	position: sticky;
-	top:0;
+	top:22vh;
 	height:70vh;
 	width:40vw;
 	background-repeat: no-repeat;
@@ -191,6 +191,7 @@ body{
 	}
 
 	.card{
+		top:15vh;
 		height:80vh;
 		width:90vw;
 	}

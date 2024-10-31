@@ -54,8 +54,9 @@ export default function RootLayout({
           <Link href="/" as="/" className="logo">CZ</Link>
 
           <div className="search_bar_area">
-            <input type="text" placeholder="Enter the name of the book" className="search_bar"/>
-            <div className="search_btn">Search</div>
+{/*            <input type="text" placeholder="Enter the name of the book" className="search_bar"/>
+Not necessery            <div className="search_btn">Search</div>
+*/}
           </div>
 
           <div className="log_in_area">
