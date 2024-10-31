@@ -99,7 +99,8 @@ const Home = ()=>{
           const image_path = item.leading_image;
           return (
             <Link href={`/products/${item.productId}`} key={index} className="first_five_products_product" >
-              <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat'}}  className="first_five_products_image"></div>
+              <img src={image_path} className="first_five_products_image"/>
+
               <div className="first_five_products_product_name">{item.product_name} </div>
               <div className="first_five_products_price">৳ {item.product_price}</div>
             </Link>);
@@ -113,7 +114,10 @@ const Home = ()=>{
       <div className="cover">
         {categories.map((item,index)=>{
           return (
-              <Link key={index} style={{ backgroundImage: "url("+item.categoryImage+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat' }} href={`/category/${item.categoryName}`}  className="card">
+              <Link key={index}  href={`/category/${item.categoryName}`}  className="card">
+
+                <img src={item.categoryImage} className="card_image"/>
+
                 <div className="layer"></div>
                 <p className="categoryName">{item.categoryName}</p>
               </Link>
@@ -158,6 +162,7 @@ export default Home;
 
 
 /*
+style={{ backgroundImage: "url("+item.categoryImage+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat' }}
 
               <div style={{ backgroundImage: "url("+item.leading_image+")",backgroundPosition :'center center',backgroundRepeat : 'no-repeat'}}  className="first_five_products_image"></div>
 
