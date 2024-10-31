@@ -7,7 +7,7 @@ import firebase from "firebase/compat/app";
 import Link from "next/link";
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement, reset } from './store/reducer.js';
-import Image from "next/Image";
+import Image from "next/image";
 
 import HeaderImage from "./headerImage.png";
 
