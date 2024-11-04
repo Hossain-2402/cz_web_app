@@ -103,8 +103,8 @@ body{
 	padding:0 2vw;
 	margin:1vh 0;
 	border-radius: 10px;
-	background:#E9BD42;
-	color:black;
+	background:black;
+	color:white;
 	font-family: verdana;
 	display: flex;
 	justify-content: center;
