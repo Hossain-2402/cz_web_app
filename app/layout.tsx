@@ -8,6 +8,8 @@ import Link from "next/link";
 import {Provider} from "react-redux";
 import store from "./store/store.js";
 
+import Image from "next/image";
+import cz_logo from "./logo_black.png"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,7 +53,7 @@ export default function RootLayout({
 
         <div className="user_input_area">
 
-          <Link href="/" as="/" className="logo">CZ</Link>
+          <Link href="/" as="/" className="logo"><Image src={cz_logo} objectFit="cover"  placeholder="blur" className="logo_image" /></Link>
 
           <div className="search_bar_area">
 {/*            <input type="text" placeholder="Enter the name of the book" className="search_bar"/>

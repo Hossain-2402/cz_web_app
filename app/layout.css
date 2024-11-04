@@ -36,6 +36,12 @@ body{
 	color:#E9BD42;
 }
 
+.logo_image{
+	height:5vh;
+	width:5vh;
+
+}
+
 .search_bar_area{
 	flex:3;
 	margin:0 2vw;
